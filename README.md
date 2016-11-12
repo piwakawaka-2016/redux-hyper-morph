@@ -13,9 +13,9 @@ Switch back to this repo and run
 ```
 npm link medux
 ```
+Then:
 ```
 npm install
-
 ```
 
 ## develop
