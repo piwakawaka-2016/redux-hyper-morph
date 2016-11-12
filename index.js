@@ -10,30 +10,29 @@ var initialState = {
   count: 0
 }
 
-var store = redux.createStore(reducer,initialState)
+var store = redux.createStore(reducer, initialState)
 
-store.subscribe(function() {
-  var state = store.getState() 
+store.subscribe(function () {
+  var state = store.getState()
   var view = render(state, store.dispatch)
   html.update(app, view)
 })
 
 store.dispatch({type: 'INIT'})
 
-function reducer(state, action) {
+function reducer (state, action) {
   var newState = clone(state)
-  switch(action.type){
+  switch (action.type) {
     case 'INIT':
       return newState
     case 'INCREMENT_COUNT':
       newState.count += 1
       return newState
-  }  
+  }
   return newState
 }
 
-
-function render(state, dispatch) {
+function render (state, dispatch) {
   return html`
     <div>
       My count is ${state.count}
