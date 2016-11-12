@@ -1,15 +1,11 @@
+# redux-yo
 
-# redux-hyper-morph
-
-it's a real sweet app
 
 ## how
 
 ### install
 
 ```
-git clone https://github.com/pietgeursen/redux-hyper-morph
-cd 
 npm install
 ```
 
