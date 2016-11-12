@@ -35,7 +35,8 @@ function reducer(state, action) {
 
 function render(state, dispatch) {
   return html`
-    <div onclick=${() => dispatch({type: 'INCREMENT_COUNT'})}>
+    <div>
       My count is ${state.count}
+      <button onclick=${() => dispatch({type: 'INCREMENT_COUNT'})}>Add 1</button>
     </div>`
 }
