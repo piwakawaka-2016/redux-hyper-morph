@@ -1,8 +1,6 @@
-# redux-yo
+# Redux Hyper Morph 
 
-
-## how
-
+## Release 1
 
 ### install
 Link your medux module into this repo. Change to your medux repo and run:
@@ -18,19 +16,14 @@ Then:
 npm install
 ```
 
-## develop
-
 ```
 npm start
 ```
 
 browse to <http://localhost:9966/>.
 
-## test
 
-```
-npm test
-```
+## Release 2
 
 ## deploy
 
