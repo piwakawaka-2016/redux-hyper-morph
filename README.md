@@ -3,10 +3,19 @@
 
 ## how
 
-### install
 
+### install
+Link your medux module into this repo. Change to your medux repo and run:
+```
+npm link
+```
+Switch back to this repo and run
+```
+npm link medux
+```
 ```
 npm install
+
 ```
 
 ## develop
