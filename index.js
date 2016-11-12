@@ -1,14 +1,22 @@
 var redux = require('medux')
-var clone = require('clone')
 var h = require('hyperscript')
 var morphdom = require('morphdom')
+
+var reducer = require('./reducer')
 
 var main = document.querySelector('main')
 var app = document.createElement('div')
 main.appendChild(app)
 
 var initialState = {
-  count: 0
+  products: [
+    {id: 1, name: 'The Name of the Wind', price: 12.50},
+    {id: 2, name: 'Firefall', price: 11.29},
+    {id: 2, name: 'Kingdom of fear', price: 34.33} 
+  ],
+  cart: {
+    '1': 2 //There are two items with id 1 in the cart 
+  }  
 }
 
 var store = redux.createStore(reducer, initialState)
@@ -21,20 +29,9 @@ store.subscribe(function () {
 
 store.dispatch({type: 'INIT'})
 
-function reducer (state, action) {
-  var newState = clone(state)
-  switch (action.type) {
-    case 'INIT':
-      return newState
-    case 'INCREMENT_COUNT':
-      newState.count += 1
-      return newState
-  }
-  return newState
-}
-
 function render (state, dispatch) {
-  return h('div', {}, `My count is: ${state.count} `,
-    h('button', {onclick: () => dispatch({type: 'INCREMENT_COUNT'})}, 'Add one')
+  return h('div', {}, `My count is: ${state.cart[1]} `,[
+    h('button', {onclick: () => dispatch({type: 'ADD_TO_CART', payload: 1})}, 'Add one')
+  ]
   )
 }
