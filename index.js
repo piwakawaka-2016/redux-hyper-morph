@@ -1,7 +1,6 @@
-var redux = require('redux')
-var h = require('hyperscript')
-var morph = require('morphdom')
+var redux = require('medux')
 var clone = require('clone')
+var html = require('yo-yo')
 
 var main = document.querySelector('main')
 var app = document.createElement('div')
@@ -15,7 +14,8 @@ var store = redux.createStore(reducer,initialState)
 
 store.subscribe(function() {
   var state = store.getState() 
-  updatePage(state)
+  var view = render(state, store.dispatch)
+  html.update(app, view)
 })
 
 store.dispatch({type: 'INIT'})
@@ -24,16 +24,18 @@ function reducer(state, action) {
   var newState = clone(state)
   switch(action.type){
     case 'INIT':
-    return newState
+      return newState
+    case 'INCREMENT_COUNT':
+      newState.count += 1
+      return newState
   }  
   return newState
 }
 
-function updatePage(state) {
-  var view = render(state)
-  morph(app, view) 
-}
 
-function render(state) {
-  return h('h1', `Hi, my count is ${state.count}`)  
+function render(state, dispatch) {
+  return html`
+    <div onclick=${() => dispatch({type: 'INCREMENT_COUNT'})}>
+      My count is ${state.count}
+    </div>`
 }
