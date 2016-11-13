@@ -3,7 +3,6 @@ var h = require('hyperscript')
 var morphdom = require('morphdom')
 
 var reducer = require('./reducer')
-
 var productsTemplate = require('./views/products')
 var cartTemplate = require('./views/cart')
 
@@ -15,11 +14,11 @@ var initialState = {
   products: [
     {id: 1, name: 'The Name of the Wind', price: 12.50},
     {id: 2, name: 'Firefall', price: 11.29},
-    {id: 3, name: 'Kingdom of fear', price: 34.33} 
+    {id: 3, name: 'Kingdom of fear', price: 34.33}
   ],
   cart: {
-    1: 2 //There are two items with id 1 in the cart 
-  }  
+    1: 2 // There are two items with id 1 in the cart
+  }
 }
 
 var store = redux.createStore(reducer, initialState)
