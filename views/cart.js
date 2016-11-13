@@ -10,7 +10,7 @@ module.exports = ({cart, products}, dispatch) => {
     return sum + (cart[id] * product.price )
   }, 0)
 
-  return h('div#cart', {}, [
+  return h('div#cart', {}, 'Your cart:', [
     h('ul#productsInCart', {}, productsInCart.map(product => h('li', product.name))),
     h('div#cartQty', {}, `Qty in cart: ${cartQty}`),
     h('div#cartTotal', {}, `Total: ${cartTotal}`)   

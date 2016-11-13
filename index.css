@@ -1,3 +1,10 @@
-main {
-  text-align: center;
+#app {
+  display: flex;
 }
+#app > div {
+  flex-grow: 1;
+}
+.product{
+  margin-bottom: 20px;
+}
+

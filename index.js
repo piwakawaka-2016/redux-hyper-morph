@@ -18,7 +18,7 @@ var initialState = {
     {id: 3, name: 'Kingdom of fear', price: 34.33} 
   ],
   cart: {
-    '1': 2 //There are two items with id 1 in the cart 
+    1: 2 //There are two items with id 1 in the cart 
   }  
 }
 
@@ -33,7 +33,7 @@ store.subscribe(function () {
 store.dispatch({type: 'INIT'})
 
 function render (state, dispatch) {
-  return h('div.app', {}, [
+  return h('div#app', {}, [
     productsTemplate(state.products, dispatch),
     cartTemplate(state, dispatch)
   ])
