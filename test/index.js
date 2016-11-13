@@ -48,3 +48,21 @@ test('REMOVE_FROM_CART when there are some in the cart', function (t) {
   t.deepEqual(newState, {cart: {'1': 1}})
   t.end()
 })
+
+test('TOGGLE_DETAILS', function (t) {
+  var initialState = {
+    products: [
+      {id:2, showDetails: false} 
+    ]
+  }
+  freeze(initialState)
+  var newState = reducer(initialState, {type: 'TOGGLE_DETAILS', payload: 2})
+  t.deepEqual(newState, {
+    products: [
+      {id:2, showDetails: true} 
+    ]
+  })
+  newState = reducer(newState, {type: 'TOGGLE_DETAILS', payload: 2})
+  t.deepEqual(newState, initialState)
+  t.end()
+})

@@ -21,6 +21,10 @@ module.exports = function reducer (state, action) {
 
       cart[productId] = cart[productId] + 1 || 1
       return newState
+    case 'TOGGLE_DETAILS':
+      var product = newState.products.find(product => product.id === action.payload) 
+      product.showDetails = !product.showDetails
+      return newState
   }
   return newState
 }
