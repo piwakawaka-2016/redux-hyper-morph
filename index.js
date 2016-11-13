@@ -4,6 +4,9 @@ var morphdom = require('morphdom')
 
 var reducer = require('./reducer')
 
+var productsTemplate = require('./views/products')
+var cartTemplate = require('./views/cart')
+
 var main = document.querySelector('main')
 var app = document.createElement('div')
 main.appendChild(app)
@@ -30,8 +33,8 @@ store.subscribe(function () {
 store.dispatch({type: 'INIT'})
 
 function render (state, dispatch) {
-  return h('div', {}, `My count is: ${state.cart[1]} `,[
-    h('button', {onclick: () => dispatch({type: 'ADD_TO_CART', payload: 1})}, 'Add one')
-  ]
-  )
+  return h('div.app', {}, [
+    productsTemplate(state.products, dispatch),
+    cartTemplate(state.cart, dispatch)
+  ])
 }
