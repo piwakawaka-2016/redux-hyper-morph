@@ -1,12 +1,10 @@
 # Redux Hyper Morph 
 
-## Release 1
-
 ## Redux + Hyperscript Shopping Cart
 
-`solution`: Example working solution. (easiest ;) )
-
 See the [deployed example solution](https://piwakawaka-2016.github.io/redux-hyper-morph/)
+
+`solution` branch: Example working solution **look at it when you're done** 
 
 ## User stories
 As a shopper I'd like to see a list of all the products available for sale so that I can know what's for sale.
@@ -25,24 +23,10 @@ As a user I want to know the total price of my shopping cart so I know that I ca
 
 As a user I'd like to know how many items are in my cart total so that I can know when I have satisfied my consumerist impulses.
 
-## Hints
-
-### install
-Link your medux module into this repo. Change to your medux repo and run:
-```
-npm link
-```
-Switch back to this repo and run
-```
-npm link medux
-```
-Then:
-```
-npm install
-```
+### Start
 
 ```
-npm start
+npm install && npm start
 ```
 
 browse to <http://localhost:9966/>.
