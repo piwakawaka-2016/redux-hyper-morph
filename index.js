@@ -4,7 +4,6 @@ var morphdom = require('morphdom')
 
 var reducer = require('./reducer')
 var productsTemplate = require('./views/products')
-var cartTemplate = require('./views/cart')
 
 var main = document.querySelector('main')
 var app = document.createElement('div')
@@ -21,19 +20,14 @@ var initialState = {
   }
 }
 
-var store = redux.createStore(reducer, initialState)
+var store = redux.createStore(/*???*/)
 
-store.subscribe(function () {
-  var state = store.getState()
-  var view = render(state, store.dispatch)
-  morphdom(app, view)
-})
+store.subscribe(/*???*/)
 
-store.dispatch({type: 'INIT'})
+store.dispatch({type: 'INIT'}) //triggers an initial render
 
 function render (state, dispatch) {
   return h('div#app', {}, [
-    productsTemplate(state.products, dispatch),
-    cartTemplate(state, dispatch)
+    productsTemplate(/*???*/)
   ])
 }
