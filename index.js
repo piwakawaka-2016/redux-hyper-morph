@@ -1,4 +1,4 @@
-var redux = require('medux')
+var redux = require('redux')
 var h = require('hyperscript')
 var morphdom = require('morphdom')
 
