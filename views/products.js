@@ -14,7 +14,7 @@ function productsTemplate (initialState, dispatch) {
 }
 
 function createList(productItem, index, dispatch) {
-  const { name, price, details, showDetails } = productItem
+  const { id, name, price, details, showDetails } = productItem
   const customClass = showDetails ? 'show' : 'noShow'
   return h('li', {
   }, [
@@ -23,8 +23,10 @@ function createList(productItem, index, dispatch) {
     h('div', {className: customClass}, details),
     h('button#details', {
       onclick: () => dispatch({type: 'TOGGLE_DETAILS', payload: index})
-    }, 'Show Details'),
-    h('button#add', {}, 'Add to Cart'),
+    }, 'Show/Hide Details'),
+    h('button#add', {
+      onclick: () => dispatch({type: 'ADD_ITEM', payload: id})
+    }, 'Add to Cart'),
     h('button#remove', {}, 'Remove from Cart'),
   ])
 }

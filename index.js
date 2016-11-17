@@ -4,6 +4,7 @@ var morph = require('morphdom')
 
 var reducer = require('./reducer')
 var productsTemplate = require('./views/products')
+var cartTemplate = require('./views/cart')
 
 var main = document.querySelector('main')
 var app = document.createElement('div')
@@ -39,6 +40,7 @@ dispatch({type: 'INIT'}) //triggers an initial render
 
 function render (initialState, dispatch) {
   return h('div#app', {}, [
-    productsTemplate(initialState, dispatch)
+    productsTemplate(initialState, dispatch),
+    cartTemplate(initialState, dispatch)
   ])
 }

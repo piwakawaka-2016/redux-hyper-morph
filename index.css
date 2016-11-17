@@ -38,5 +38,10 @@ button {
 }
 
 .show {
-display: block 
+display: block
+}
+
+#cart {
+  background-color: red;
+  text-align: center;
 }
