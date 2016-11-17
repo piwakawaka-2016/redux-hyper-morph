@@ -8,3 +8,10 @@
   margin-bottom: 20px;
 }
 
+body {
+  font-family: sans-serif;
+}
+
+#products {
+  max-width: 50%;
+}
