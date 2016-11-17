@@ -20,14 +20,23 @@ var initialState = {
   }
 }
 
-var store = redux.createStore(reducer, initialState)
+const store = redux.createStore(reducer, initialState)
+const dispatch = store.dispatch
 
-store.subscribe(/*???*/)
+const updateView = () => {
+  const state = store.getState()
+  const view = render(state, dispatch)
+  console.log(state);
+  morphdom(app, view)
+}
+
+store.subscribe(updateView)
 
 store.dispatch({type: 'INIT'}) //triggers an initial render
 
+
 function render (state, dispatch) {
   return h('div#app', {}, [
-    productsTemplate(/*???*/)
+    productsTemplate(state, dispatch)
   ])
 }

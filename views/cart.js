@@ -2,6 +2,5 @@ var h = require('hyperscript')
 
 module.exports = ({cart, products}, dispatch) => {
 
-  return h('div#cart', {}, )
+  return h('div#cart', {}, "Your cart: ",)
 }
-
