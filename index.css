@@ -8,3 +8,35 @@
   margin-bottom: 20px;
 }
 
+li {
+  list-style: none;
+  margin-bottom: 30px;
+  font-family: sans-serif;
+}
+
+button {
+  border: solid 2px black;
+  margin-right: 5px;
+  margin-top: 5px;
+  font-family: sans-serif;
+}
+
+#details {
+  background-color: #33ccff;
+}
+
+#add {
+  background-color: #ff1a1a;
+}
+
+#remove {
+  background-color: #33ff33;
+}
+
+.noShow {
+  display: none;
+}
+
+.show {
+display: block 
+}
