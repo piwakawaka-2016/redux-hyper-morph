@@ -20,7 +20,7 @@ var initialState = {
   }
 }
 
-var store = redux.createStore(/*???*/)
+var store = redux.createStore(reducer, initialState)
 
 store.subscribe(/*???*/)
 
